@@ -1,0 +1,10 @@
+/*REQUIRED*/
+
+#movContinu
+{
+    position: absolute;
+    width: 115px;
+    height: 30px;
+    background-color: orange;
+    top: auto;
+}

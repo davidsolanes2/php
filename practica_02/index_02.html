@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercici Jquery</title>
+        <script src="jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap-theme.css">
+        <link rel="stylesheet" href="pr_css_02.css">
+        <script src="pr_02.js"></script>
+
+    </head>
+    <body>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="page-header" id="header">
+                        <h1>INTRODUCCIÓ A JQUERY <small>http://api.jquery.com</small></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel-primary">
+                        <div class="panel-heading" id="panel_01">
+                            <h4>Alterar el CSS</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                1.1 Utilitza jQuery perquè al iniciar-se la web, el títol es mostri amb color de fons verd
+                            </div>
+                            <div class="row">
+                                1.1 Utilitza jQuery perquè al clicar sobre #setBlueColor establexi el header amb color de fons blau
+                            </div>
+                            <div class="row">
+                                1.3 Utilitza jQuery perquè al clicar sobre #setRedColor estableix el header amb color de fons vermell
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-xs-6">
+                                    <br>
+                                    <button type="button" class="btn btn-primary" id="setBlueColor">Header Azul</button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <br>
+                                    <button type="button" class="btn btn-danger" id="setRedColor">Header Rojo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="panel-primary">
+                            <div class="panel-heading" id="panel_02">
+                                <h4>ANIMACIONS BÀSIQUES</h4>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                1.4. Utilitza jQuery perquè al clicar sobre #setInvisible torna com invisible al header am la funció .fadeOut
+                            </div>
+                            <div class="row">
+                                1.5. Al clicar sobre #setVisible torna com a visible el header  amb la funció .fadeIn()
+                            </div>
+                            <div class="row">
+                                1.6. Al clicar sobre #toggleVisible torna com a visible/invisible el header  amb la funció .fadeToggle()
+                            </div>
+                            <div class="row">
+                                1.7. Al clicar sobre #incSize augmenta “50px” la altura del header amb una transició de 1.5 segons.
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-primary" id="setInvisible">#setInvisible</button>
+                                </div>
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-success" id="setVisible">#setVisible</button>
+                                </div>
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-danger" id="toggleVisible">#toggleVisible</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-header" id="movContinu">
+                        movimentContinu
+                    </div>
+                    <br/><br/><br/><br/>
+
+                    <div class="row">
+                        <div class="panel-primary">
+                            <div class="panel-heading" id="panel_03">
+                                <h4>TRANSICIONS</h4>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                1.8.	Al clicar sobre #decSize disminueix “50px” la altura del header  una transició de 2 segons.
+                            </div>
+                            <div class="row">
+                                1.9.	Al clicar sobre #incRight augmenta “50px” la distància a l’esquerre del element #divMobil amb una transició de 1.5 segons.
+                                        En cada pas de la transició, utilitza la funció .html()  per insertar dins #divMobil el valor del parámetre now.
+                            </div>
+                            <div class="row">
+                                1.10.	Al clicar sobre #decRight disminueix “50px” la distància a l’esquerre del element #divMobil amb una transició de 1.5 segons.
+                                        En cada pas de la transició, utilitza la funció .html() per insertar dins #divMobil el valor del parámetre now.
+                            </div>
+                            <div class="row">
+                                1.11.	Al clicar sobre #movimentContinu es mogui contínuament l'element #divMobil d'esquerre a dreta i es canviï de color a taronja.
+                            </div>
+                            <div class="row">
+                                1.12.	Al clicar per segona vegada sobre #movimentContinu s’aturi el moviment de l'element #divMobil d'esquerre a dreta amb la funció .stop( ) i es canviï de color a verd.
+                            </div>
+
+                            <div class="row" align="center">
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-primary" id="incSize">#incSize</button><br>
+                                    <button type="button" class="btn btn-primary" id="decRight">#decRight</button>
+                                </div>
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-success" id="decSize">#decSize</button><br>
+                                    <button type="button" class="btn btn-success" id="movimentContinu">#movimentContinu</button>
+                                </div>
+                                <div class="col-xs-4">
+                                    <br>
+                                    <button type="button" class="btn btn-danger" id="incRight">#incRight</button><br>
+                                    <button type="button" class="btn btn-danger" id="toggleVisible_01">#toggleVisible</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+</html>
+
+
+
+
+
+
+

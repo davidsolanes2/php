@@ -1,0 +1,9 @@
+html,body,#popUp{
+    width: 100%;height:100%;
+    top:0px;left:0px;}
+#buttons> div{
+    border: 1px solid blue;
+    min-height: 30px;
+    min-width: 75px;
+    display: inline-block;
+}

@@ -1,0 +1,6 @@
+.carta {
+    height: 150px;
+    vertical-align: top;
+    background-image: url("Imagenes/memory.jpg");
+    background-size: 100% 100%;
+}
