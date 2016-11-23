@@ -4,37 +4,52 @@
 
 $(document).ready(iniciar);
 
+var carta = $("<img src= 'Imagenes/memory.jpg'/>");
+
 function iniciar() {
-    $('#tablero>div').click(checkCarta)
+    $('#check').click();
+    $('#tablero').find('div>img').click(checkCarta)
 }
 
 function checkCarta() {
+    var ficha = $(this).attr('title');
+    var padre = $(this).parent().attr('id');
 
-    var id = $(this).attr("id");
-    var tit = $(this).parent().attr("title");
     $.ajax({
         type :"POST",
         url :"resp_04.php",
         dataType :"json",
-        data :{"id":id,
-            "num":tit},
+        data :{"carta":ficha,
+            "id":padre},
 
-        success:function (resp_04) {
+        success:function(respuesta) {
+            var a = respuesta.ficha;
+            var b = respuesta.id;
+            var c = respuesta.id2;
+            var i = $('<img />');
+            i.attr('src',a);
 
-            var src=resp_04.src;
-            var id=resp_04.id;
-            $("#"+id).html("<img src=' " + src + " '/>")
+            $("#"+b+">img").remove();
+            $("#"+b).append(i);
+            $("#"+b).off();
+            $("#"+c).off();
 
-            var iguales = resp_04.iguales;
-            if (iguales="si"){
-                var id2 = resp_04.id2;
-                $("#"+id).off();
-                $("#"+id2).off();
+            //controlar aqui si las tarjetas son iguales ?
+
+            var iguales = respuesta.iguales;
+            if(iguales === "si") {
+                var id2 = respuesta.id2;
+                $("#"+b).off();
+                $("#"+c).off();
             }
-            else {
-                $("#"+id).html("");
-                $("#"+id).html("");
 
+            if (iguales === "no" ) {
+            //if (c != -1) {
+              var id2 = respuesta.id2;
+                window.setTimeout(function () {
+                    $("#"+b).html(carta);
+                    $("#"+c).html(carta);
+                }, 1500);
             }
         }
     });

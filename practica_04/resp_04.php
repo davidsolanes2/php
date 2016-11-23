@@ -8,53 +8,67 @@
 
 session_start();
 
-if(isset($_SESSION["nimagen"])) {
-
+if(!isset($_SESSION["click"])) {
+    $_SESSION["click"] = -1;
+    $_SESSION["ficha2"] = "";
+    $_SESSION["id2"] = "";
 }
-else {$_SESSION["nimagen"]="-1";}
-
-$id = $_POST["id"];
-$num = $_POST["num"];
-$id_anterior="";
-$num_anterior="";
 $srcImg2 = "";
 $iguales= "";
+$carta_anterior="";
+$ficha = $_POST["carta"];
+$id = $_POST["id"];
 
 $imagen = [
-    'Imagenes/Arbol.jpg',
-    'Imagenes/Buho.jpg',
-    'Imagenes/Elfo.jpg',
-    'Imagenes/Estrella.jpg',
-    'Imagenes/North Pole.jpg',
-    'Imagenes/Reno.jpg',
-    'Imagenes/Trineo.jpg',
-    'Imagenes/North Pole.jpg'];
+    "Imagenes/Arbol.jpg",
+    "Imagenes/Buho.jpg",
+    "Imagenes/Elfo.jpg",
+    "Imagenes/Estrella.jpg",
+    "Imagenes/North Pole.jpg",
+    "Imagenes/Reno.jpg",
+    "Imagenes/Trineo.jpg",
+    "Imagenes/Copo.jpg",
+    "Imagenes/Arbol.jpg",
+    "Imagenes/Buho.jpg",
+    "Imagenes/Elfo.jpg",
+    "Imagenes/Estrella.jpg",
+    "Imagenes/North Pole.jpg",
+    "Imagenes/Reno.jpg",
+    "Imagenes/Trineo.jpg",
+    "Imagenes/Copo.jpg"]; //ojo faltan 1 dibujo y doblarlo
 
-if ($_SESSION["nimagen"]=="-1") {
-    //primera vez que clickamos
-    $_SESSION["nimagen"]=$id;
-    $_SESSION["num_inicial"]=$num;
+$a = $imagen[$ficha];
+
+if ($_SESSION["click"] == -1) { //primera vez que clickamos
+    $_SESSION["click"]=$id;
+    $_SESSION["ficha2"]=$ficha;
+    $respuesta = '{"ficha":"'. $a .'", '
+        .'"id":"'. $id . '", '
+        .'"ficha2":"-1", '
+        .'"id2":"-1"}';
+    echo $respuesta;
 }
 else {
-    //segunda vez que clickamos
-    $id_anterior = $_SESSION["nimagen"];
-    $num_anterior = $_SESSION["num_inicial"];
-    $iguales = false;
-    if ($imagen[$num] = $imagen[$num_anterior]) {
-        $iguales=true;
+    $carta_anterior = $_SESSION['ficha2']; //segunda vez que clickamos
+    if ($imagen[$ficha] == $imagen[$carta_anterior]) {
+        $iguales = "si";
+        $srcImg2 = $imagen[$carta_anterior];
+        $respuesta = '{"ficha":"' . $a . '", '
+            . '"id":"' . $id . '", '
+            . '"ficha2":"' . $srcImg2 . '", '
+            . '"id2":"' . $_SESSION["click"] . '"}';
+        echo $respuesta;
     }
+    else {
+        $iguales = "no";
 
-    $srcImg2 = $imagen[$num_anterior];
-
-
-    $_SESSION["nimagen"]="-1";
+        echo $respuesta;
+    }
+    $_SESSION["click"] = -1;
 }
 
-$srcImg = $imagen[$num];
-$srcImg2 = $imagen[$num_anterior];
-
-$resp_04='{"src":" '.$srcImg.' ", "id":"'.$id.' " ' . ' "src2":" '.$srcImg2.'}';
-//revisar codigo
 
 
-echo $resp_04;
+
+
+

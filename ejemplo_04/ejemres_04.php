@@ -7,7 +7,7 @@
  */
 
 $repe=$_POST["repe"];
-$par=$_POST["par"];
+$par=$_POST["paraula"];
 $paraula="";
 
 while ($repe>0) {
@@ -16,5 +16,5 @@ while ($repe>0) {
 }
 
 $resposta='{"paraula":"'.$paraula.'"}';
-echo $resposta;
 
+echo $resposta;
