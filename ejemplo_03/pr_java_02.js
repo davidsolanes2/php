@@ -7,14 +7,20 @@
 $(document).ready(iniciar);
 
 function iniciar() {
+    //noinspection JSJQueryEfficiency
     $("#popUp").fadeOut();
+    //noinspection JSJQueryEfficiency
     $("#intermitent").fadeOut();
+    //noinspection JSJQueryEfficiency,JSJQueryEfficiency
     $("#contenidorDivs>div").mouseenter(incSize);
+    //noinspection JSJQueryEfficiency,JSJQueryEfficiency
     $("#contenidorDivs>div").mouseout(decSize);
     $("#setBlueColor").click(setBlueColor);
     $("#setRedColor").click(setRedColor);
     $("#showPop").click(tooglePopUp);
+    //noinspection JSJQueryEfficiency
     $("#popUp").click(ocultaPopUp);
+    //noinspection JSJQueryEfficiency
     $("#intermitent").click(toogleColors);
 }
 var aux ="blanco";
@@ -60,16 +66,20 @@ function  ocultaPopUp() {
 }
 
 function setRedColor() {
+    //noinspection JSJQueryEfficiency
     $("#setBlueColor").css({
         "background-color" : "red"
     });
+    //noinspection JSJQueryEfficiency
     $("#setBlueColor").fadeIn;
     $(this).fadeOut();
 }
 function setBlueColor() {
+    //noinspection JSJQueryEfficiency
     $("#setRedColor").css({
         "background-color" : "blue"
     });
+    //noinspection JSJQueryEfficiency
     $("#setRedColor").fadeIn;
     $(this).fadeOut();
 }

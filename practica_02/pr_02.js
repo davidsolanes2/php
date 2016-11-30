@@ -64,7 +64,9 @@ function movimentContinu() {
         derecha();
     }
     else {
+        //noinspection JSJQueryEfficiency
         $('#movContinu').css('background-color', 'green');
+        //noinspection JSJQueryEfficiency
         $('#movContinu').stop();
         change = true;
     }

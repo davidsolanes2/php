@@ -1,8 +1,0 @@
-<component name="libraryTable">
-  <library name="mods-available">
-    <CLASSES />
-    <SOURCES>
-      <root url="file:///etc/php/7.0/mods-available" />
-    </SOURCES>
-  </library>
-</component>

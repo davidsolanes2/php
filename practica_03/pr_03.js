@@ -14,6 +14,7 @@ function iniciar() {
 /* Seleccionamos una ficha */
 function seleccion_01() {
     if($("#seleccion").children().length>0){  /* Validamos que solo haya un ficha en la casilla */
+        //noinspection JSJQueryEfficiency
         $("#seleccion>img").appendTo("#fichas_01");
     }
     $(this).appendTo("#seleccion");
@@ -25,11 +26,14 @@ function retorno_ficha() {
 /* Colocamos la ficha en el tablero */
 function tablero() {
     if($(this).children().length===0){
+        //noinspection JSJQueryEfficiency,JSJQueryEfficiency
         $("#seleccion>img").off();
+        //noinspection JSJQueryEfficiency,JSJQueryEfficiency
         $("#seleccion>img").appendTo($(this));
     }
     else {
         if ($("#seleccion").children().length!==0) {
+            //noinspection JSJQueryEfficiency
             var foto =$("#seleccion>img");
         }
         $(this).children("img").click(seleccion_01);

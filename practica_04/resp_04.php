@@ -8,16 +8,17 @@
 
 session_start();
 
-if(!isset($_SESSION["click"])) {
-    $_SESSION["click"] = -1;
-    $_SESSION["ficha2"] = "";
-    $_SESSION["id2"] = "";
+if(isset($_SESSION["click"])) {
+  } else {
+    $_SESSION["click"] = "-1";
 }
 $srcImg2 = "";
 $iguales= "";
-$carta_anterior="";
-$ficha = $_POST["carta"];
+$num2=""; //anterior
+$id_anterior=""; //anterior
+$num = $_POST["num"];
 $id = $_POST["id"];
+
 
 $imagen = [
     "Imagenes/Arbol.jpg",
@@ -35,40 +36,34 @@ $imagen = [
     "Imagenes/North Pole.jpg",
     "Imagenes/Reno.jpg",
     "Imagenes/Trineo.jpg",
-    "Imagenes/Copo.jpg"]; //ojo faltan 1 dibujo y doblarlo
+    "Imagenes/Copo.jpg"];
 
-$a = $imagen[$ficha];
 
-if ($_SESSION["click"] == -1) { //primera vez que clickamos
-    $_SESSION["click"]=$id;
-    $_SESSION["ficha2"]=$ficha;
-    $respuesta = '{"ficha":"'. $a .'", '
-        .'"id":"'. $id . '", '
-        .'"ficha2":"-1", '
-        .'"id2":"-1"}';
-    echo $respuesta;
+
+if ($_SESSION["click"] == "-1") { //primera vez que clickamos
+    $_SESSION["click"] = $id;
+    $_SESSION["num_inicial"] = $num;
+
 }
 else {
-    $carta_anterior = $_SESSION['ficha2']; //segunda vez que clickamos
-    if ($imagen[$ficha] == $imagen[$carta_anterior]) {
+    $id_anterior = $_SESSION["click"]; //segunda vez que clickamos
+    $num2 = $_SESSION["num_inicial"];
+    $iguales = "no";
+    if ($imagen[$num] == $imagen[$num2]) {
         $iguales = "si";
-        $srcImg2 = $imagen[$carta_anterior];
-        $respuesta = '{"ficha":"' . $a . '", '
-            . '"id":"' . $id . '", '
-            . '"ficha2":"' . $srcImg2 . '", '
-            . '"id2":"' . $_SESSION["click"] . '"}';
-        echo $respuesta;
     }
-    else {
-        $iguales = "no";
-
-        echo $respuesta;
-    }
-    $_SESSION["click"] = -1;
+    $srcImg2 = $imagen[$num2];
+    $_SESSION["click"] = "-1";
 }
+    $srcImg = $imagen[$num];
+    $respuesta = '{"src":"'. $srcImg .'", '
+       .'"id":"'. $id . '", '
+       .'"src2":"'. $srcImg2 . '", '
+       .'"id2":"' . $id_anterior . '", '
+       .'"iguales": "' . $iguales . '"}';
 
+   echo $respuesta;
 
-
-
+  // shuffle($imagen); sirve para ordenar aleatoriamente el array
 
 

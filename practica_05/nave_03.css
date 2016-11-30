@@ -1,0 +1,13 @@
+body
+{
+    background-color: #2e6da4;
+}
+
+.panel-body
+{
+    background-color: #5bc0de;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 450px;
+    width: 1250px;
+}

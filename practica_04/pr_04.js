@@ -4,53 +4,42 @@
 
 $(document).ready(iniciar);
 
-var carta = $("<img src= 'Imagenes/memory.jpg'/>");
-
 function iniciar() {
-    $('#check').click();
-    $('#tablero').find('div>img').click(checkCarta)
+    $('#check').click(empezar);
+    $(".carta").click(checkCarta);
 }
 
 function checkCarta() {
-    var ficha = $(this).attr('title');
-    var padre = $(this).parent().attr('id');
-
+    var tit = $(this).attr("title");
+    var id = $(this).attr("id");
     $.ajax({
         type :"POST",
         url :"resp_04.php",
         dataType :"json",
-        data :{"carta":ficha,
-            "id":padre},
-
+        data :{"id": id,
+            "num": tit},
         success:function(respuesta) {
-            var a = respuesta.ficha;
-            var b = respuesta.id;
-            var c = respuesta.id2;
-            var i = $('<img />');
-            i.attr('src',a);
-
-            $("#"+b+">img").remove();
-            $("#"+b).append(i);
-            $("#"+b).off();
-            $("#"+c).off();
-
-            //controlar aqui si las tarjetas son iguales ?
-
+            var src = respuesta.src;
+            var id = respuesta.id;
+            var id2 = respuesta.id2;
+            
+            $("#" + id).attr("src", src);
             var iguales = respuesta.iguales;
             if(iguales === "si") {
-                var id2 = respuesta.id2;
-                $("#"+b).off();
-                $("#"+c).off();
+                //var id2 = respuesta.id2;
+                $("#"+id).off();
+                $("#"+id2).off();
             }
-
-            if (iguales === "no" ) {
-            //if (c != -1) {
-              var id2 = respuesta.id2;
+            else if (iguales === "no" ) {
                 window.setTimeout(function () {
-                    $("#"+b).html(carta);
-                    $("#"+c).html(carta);
+                    $("#"+id).attr("src","Imagenes/memory.jpg");
+                    $("#"+id2).attr("src","Imagenes/memory.jpg");
                 }, 1500);
             }
         }
     });
+}
+
+function empezar() {
+    
 }

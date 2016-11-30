@@ -1,27 +1,17 @@
 <component name="ProjectDictionaryState">
   <dictionary name="david">
     <words>
-      <w>arbol</w>
-      <w>buho</w>
-      <w>carta</w>
-      <w>clickamos</w>
-      <w>codigo</w>
-      <w>ejemres</w>
-      <w>elfo</w>
-      <w>ficha</w>
-      <w>imagen</w>
-      <w>imagenes</w>
-      <w>inicial</w>
-      <w>iniciar</w>
-      <w>nimagen</w>
-      <w>paraula</w>
-      <w>primera</w>
-      <w>repe</w>
-      <w>resposta</w>
-      <w>respuesta</w>
-      <w>segunda</w>
-      <w>tablero</w>
-      <w>trineo</w>
+      <w>aleatorio</w>
+      <w>bucle</w>
+      <w>conectar</w>
+      <w>conexion</w>
+      <w>copo</w>
+      <w>cotainer</w>
+      <w>iguales</w>
+      <w>numero</w>
+      <w>pilotos</w>
+      <w>postgre</w>
+      <w>usuario</w>
     </words>
   </dictionary>
 </component>
