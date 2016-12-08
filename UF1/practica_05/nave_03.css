@@ -3,9 +3,9 @@ body
     background-color: #2e6da4;
 }
 
-.panel-body
+#subject
 {
-    background-color: #5bc0de;
+    background-image: url("Imagenes/Fondo_Galaxia.jpg");
     margin-top: 10px;
     margin-left: 10px;
     height: 450px;
