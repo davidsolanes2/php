@@ -3,15 +3,28 @@
     <words>
       <w>aleatorio</w>
       <w>bucle</w>
+      <w>concesionario</w>
       <w>conectar</w>
       <w>conexion</w>
       <w>copo</w>
       <w>cotainer</w>
+      <w>detener</w>
+      <w>empezar</w>
+      <w>enemigo</w>
+      <w>espacial</w>
       <w>iguales</w>
+      <w>inicio</w>
+      <w>keypress</w>
+      <w>keyup</w>
+      <w>nombre</w>
       <w>numero</w>
       <w>pilotos</w>
       <w>postgre</w>
+      <w>practica</w>
+      <w>puntuacion</w>
+      <w>registro</w>
       <w>usuario</w>
+      <w>usuarios</w>
     </words>
   </dictionary>
 </component>

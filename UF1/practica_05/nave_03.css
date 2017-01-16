@@ -1,13 +1,25 @@
 body
 {
-    background-color: #2e6da4;
+    background-color: #1b6d85;
+    width: 1250px;
 }
 
 #subject
 {
     background-image: url("Imagenes/Fondo_Galaxia.jpg");
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 450px;
+    height: 400px;
     width: 1250px;
+    align-self: inherit;
+}
+
+#space
+{
+    height: 385px;
+    width: 1240px;
+}
+
+#escudo
+{
+    background-color: #761c19;
+    width: 200px;
 }

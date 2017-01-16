@@ -4,28 +4,47 @@
         <meta charset="UTF-8">
         <title>Nave Espacial</title>
         <script src="jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap-theme.css">
         <script src="hittest.js"></script>
         <link rel="stylesheet" href="nave_03.css">
-        <script src="nave_02.js"></script>
+        <script src="nave_02.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="cotainer">
             <div class="panel-header" align="center">
-                <h1>SPACE BATTLE</h1>
+                <div id="titulo">
+                    <h1>SPACE BATTLE</h1>
+                </div>
             </div>
             <div class="panel-primary">
                 <div class="row">
-                    <h3>Registro</h3>
-                    <div class="col-lg-6">
-                        Nombre : <input>
-                    </div>
-                    <div class="col-lg-6">
-
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-11"><h3>Registro</h3></div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-7">
+                                <form id="usuarios" action="naveRegistro.php">
+                                    Nombre : <input type="text" name="usuario" value="">
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </div>
+                            <div class="col-lg-3" align="center">
+                                <div id="escudo" class="row-lg-2">Escudo</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <button id="start" type="button" class="btn-primary">Start</button>
+                            <button id="stop" type="button" class="btn-primary">Stop</button>
+                            <button id="change" type="button" class="btn-primary">Change Ship</button>
+                        </div>
                     </div>
                 </div>
                 <div class="panel-body">
                     <div id="subject">
-                        <div id="space"></div>
+                        <div id="space">
+                        </div>
                     </div>
                 </div>
             </div>
