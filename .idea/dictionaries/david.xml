@@ -3,6 +3,8 @@
     <words>
       <w>addpedidos</w>
       <w>aleatorio</w>
+      <w>añadir</w>
+      <w>borrar</w>
       <w>bucle</w>
       <w>camara</w>
       <w>coche</w>
@@ -10,7 +12,9 @@
       <w>conectar</w>
       <w>conexion</w>
       <w>copo</w>
+      <w>correcto</w>
       <w>cotainer</w>
+      <w>cuadro</w>
       <w>detener</w>
       <w>direccion</w>
       <w>empezar</w>
@@ -22,17 +26,31 @@
       <w>keypress</w>
       <w>keyup</w>
       <w>limousinas</w>
+      <w>lista</w>
       <w>maragall</w>
       <w>nombre</w>
       <w>numero</w>
+      <w>número</w>
+      <w>operacion</w>
       <w>paseo</w>
+      <w>pedido</w>
+      <w>pedidos</w>
+      <w>peugot</w>
       <w>pilotos</w>
+      <w>posicion</w>
+      <w>posición</w>
       <w>postgre</w>
       <w>practica</w>
+      <w>printlista</w>
+      <w>punto</w>
       <w>puntuacion</w>
+      <w>realizaremos</w>
       <w>registro</w>
+      <w>seleccionada</w>
       <w>solanes</w>
+      <w>subtot</w>
       <w>techo</w>
+      <w>teclado</w>
       <w>usuario</w>
       <w>usuarios</w>
     </words>
