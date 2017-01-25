@@ -4,56 +4,61 @@
         <meta charset="UTF-8">
         <title>Practica_06</title>
         <script src="jquery-3.1.1.js"  ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="bootstrap.min.js" ></script>
         <link rel="stylesheet" href="estilo.css">
-        <script src="array.js" ></script>
+        <script src="arrayAngular.js" ></script>
     </head>
     <body>
-    <div class="container">
-        <div class="row">
-            <div class="page-header" align="center">
-                <h1>PRACTICA DE ARRAYS</h1>
-            </div>
-        </div>
-        <div class="panel-header">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-4" align="center">
-                        <table>
-                            <tr>
-                                <td class="mano"></td></br>
-                            </tr>
-                        </table>
-                    </div>
+        <div class="container" ng-app="app" ng-controller="controller">
+            <div class="row">
+                <div class="page-header" align="center">
+                    <h1>PRACTICA DE ARRAYS/ANGULAR</h1>
                 </div>
-                <!-- dibujo del cuadro del array de numeros -->
+            </div>
+            <div class="panel-header">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4" align="center">
+                            <table>
+                                <tr>
+                                    <div ng-repeat="numeros in lista">
+                                        <td class="mano">{{numeros}}</td>
+                                    </div>
+                                    </br>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- dibujo del cuadro del array de numeros -->
+                </div>
             </div>
             <div class="panel-footer">
-            </br>
                 <div class="col-xs-2" align="center">
                     <h3>Extras</h3>
-                    <button id="check_01" type="button" class="btn-primary">Primer y Útlimo Numero</button>
-                    <button id="check_05" type="button" class="btn-primary">Calcular</button>
+                    <button ng-model="button" ng-click="punto_01()">Primer y Útlimo Numero</button>
+                    <button ng-model="button" ng-click="punto_05()">Calcular</button>
                 </div>
                 <div class="col-xs-4" align="center">
                     <h3>Añadir Numero</h3>
-                    <button id="check_02" type="button" class="btn-primary">Al final</button>
-                    <button id="check_03" type="button" class="btn-primary">Al inicio</button>
+                    <button ng-model="button" ng-click="punto_02()">Al final</button>
+                    <button ng-model="button" ng-click="punto_03()">Al inicio</button>
                 </div>
                 <div class="col-xs-4" align="center">
                     <h3>Borrar</h3>
-                    <button id="check_04" type="button" class="btn-primary">Último Numero</button>
-                    <button id="check_06" type="button" class="btn-primary">Posición concreta</button>
-                    <button id="check_07" type="button" class="btn-primary">Número concreto</button>
+                    <button ng-model="button" ng-click="punto_04()">Último Numero</button>
+                    <button ng-model="button" ng-click="punto_06()">Posición concreta</button>
+                    <button ng-model="button" ng-click="punto_07()">Número concreto</button>
                 </div>
                 <div class="col-xs-2" align="center">
                     <h4>Resultado</h4>
-                    <div class="resultado"></div>
+                    <div>{{resultado_01}}</div>
+                    <div>{{resultado_02}}</div>
+                    <div>{{resultado_03}}</div>
                 </div>
             </div>
         </div>
-    </div>
     </body>
 </html>
