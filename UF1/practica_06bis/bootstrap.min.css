@@ -1,4 +1,11 @@
-/*!
+<script src="jquery-3.1.1.js"  ></script>
+        <script src="bootstrap.min.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+        <link rel="stylesheet" href="estilo.css">
+        <script src="concesionarioService.js" ></script>
+        <script src="concesionarioController.js" ></script>/*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)

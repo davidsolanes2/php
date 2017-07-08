@@ -1,0 +1,7 @@
+#listaPropiedades {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: double;
+}

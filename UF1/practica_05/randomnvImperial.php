@@ -6,7 +6,7 @@
  * Time: 19:30
  */
 
-$random = mt_rand(170, 485);
+$random = mt_rand(170, 510);
 
 $respuesta = '{"random":"' .$random.'"}';
 

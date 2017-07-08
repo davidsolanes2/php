@@ -5,16 +5,20 @@
 $(document).ready(iniciar);
 
 var nave = $("<img src='Imagenes/nave.png'/>");
+var morfic = $("<img src='Imagenes/morfic.png'/>");
 
 function iniciar() {
     $("#usuario").click(registro);
     $("#start").click(empezar);
+    $("#envio").click(registro);
 
 }
 
 function enemigos() {
     window.setInterval(ataque, 2000);
+
 }
+
 
 function empezar() {
     $("#space").append(nave);
@@ -69,7 +73,19 @@ function empezar() {
             var h = x.left
 
         }
+        if (keyCode === 77) {
+            $("#space").append(morfic);
+                morfic.css({
+                "position":"absolute",
+                "width:100%":"heigth: 100%",
+                }, 1);
+            }
+
+
     }
+
+
+
 
    });
     //37 left, 38 up , 39 right, 40 down
@@ -80,7 +96,7 @@ function propiedades(enemigo, random) {
         "height": "50px",
         "width": "50px",
         "top": random + "px",
-        "left": $("#space").width() - enemigo.width()
+        "left": $("#space").width() - 65
     });
 }
 
@@ -93,33 +109,34 @@ function ataque() {
         success: function (respuesta) {
             var enemigo = $("<img src = 'Imagenes/naveImperial.png'/>");
             propiedades(enemigo, respuesta.random);
-            $("#space").append(enemigo);
+            $("#subject").append(enemigo);
             enemigo.animate(
                 {
-                    "left": "+20"
+                    "left": "+15"
                 },
                 {duration: 5000,
                     step: function (now, fx) {
                         if ($(enemigo).hittest($(nave))){
-                            enemigo.remove();
-                            $('#escudo').animate({
-                                "width": "-=20"
+                            $(enemigo).remove();
+                            $("#escudo").animate({
+                                "width": "-=10"
                             },
                                 {
                                     step: function (now, fx) {
                                         if ($("#escudo").width() == 0) {
-                                            alert('GAME OVER');
                                             clearInterval(window);
                                             nave.stop();
-                                            enemigo.stop();
+                                            $(enemigo).stop();
+                                            alert('GAME OVER');
                                         }
                                     }
-                                });
+                                }
+                                );
                         }
                     },
                     complete: function () {
-                        //puntos++;
-                        enemigo.remove();
+                        $(enemigo).remove();
+                        puntos++;
                     }
             });
 
@@ -129,29 +146,33 @@ function ataque() {
 }
 
 function registro() {
-    var nombre  = $("#texto").val();
-    var puntuacion = $("#puntuacion").val();
-    $.ajax({
-        type: "POST",
-        url: "naveRegistro.php",
-        dataType: "json",
-        data: { "nombre": nombre,
-                "puntuacion" : puntuacion
-        },
-        success: function (respuesta) {
-            var elemento="<ul>";
-            for(var nombre in respuesta) {
-                console.log(respuesta[nombre]);
-                console.log(nombre);
-                elemento +="<li>"+"Nombre : "+nombre+"</li><li>"+"Puntuacion : "+respuesta[nombre]+"</li></br>";
+    var warning = $("<p class='alert-danger'><strong>El Campo no puede quedar vacio!</strong>\n\
+                    </p>");
+
+    if ($("#userName").val() == "") {
+        $("#usuarios").append(warning);
+    } else {
+        warning.remove();
+        $.ajax({
+            type: "POST",
+            url: "naveRegistro.php",
+            dataType: "json",
+            data: {userName: $("#userName").val()},
+            success: function (response) {
+                var ul = "<ul>";
+                for (var name in response.users) {
+                    if (response.users[name].name != "") {
+                        ul += "<li>Name: " + response.users[name].name + ", score: " + response.users[name].score + "</li>";
+                    }
+                }
+                ul += "</ul>";
+                $("#usersList > ul > li").remove();
+                $("#usersList").html(ul);
+                $("#start").fadeIn();
             }
-            elemento+="</ul>";
-            $("#tabla").append(elemento);
-
-        }
-
-    });
-
+        });
+    }
 }
+
 
 

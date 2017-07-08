@@ -1,31 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Practica Objetos Angular</title>
-        <script src="jquery-3.1.1.js"  ></script>
-        <script src="bootstrap.min.js" ></script>
-        <script src="concesionarioService.js" ></script>
-        <script src="concesionarioController.js" ></script>
+        <script src="jquery-3.1.1.js" type="text/javascript" ></script>
+        <script src="bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="concesionarioController.js" type="text/javascript"></script>
+        <script src="concesionarioService.js" type="text/javascript"></script>
+
     </head>
-    <body>
-        <div class="container">
-            <div class="panel-header">
-                <div class="row">
-                    <div class="col-xs-1" align="center">
-                        <h5>Concesionarios</h5>
+    <body ng-app="appVehiculos">
+        <div ng-controller="controllerConcesionario" class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h2 class="panel-tittle" style="align-content: center">Concesionarios</h2>
+                </div>
+                <div class="panel-body" align="center">
+                    <div class="col-xs-6">
+                        <table class="empresa" align="center">
+                            <div class="col-xs-6">
+                                <tr>
+                                    <td>Concesionario :
+                                        <select ng-model="selConcesionario">
+                                            <option ng-repeat="c in concesionarios" value={{$index}}>
+                                                {{c.nombre}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        Direccion :{{concesionarios[selConcesionario].direccion}}
+                                    </td>
+                                </tr>
+                            </div>
+                            <div class="col-xs-6">
+
+                            </div>
+                        </table>
                     </div>
-                    <div class="col-xs-5"></div>
-                    <div class="col-xs-5"></div>
-                    <div class="col-xs-1" align="right">
-                        <button id="check_01" type="button" class="btn-primary">Grabar</button>
+                    <div class="col-xs-6" align="rigth">
+                        <table class="pedidos" align="center" >
+                            <tr>
+                                <td>Marca : <input type="text" value="" ng-model="marca" onclick="this.value =''"/><br/>
+                                    Modelo: <input type="text" value="" ng-model="modelo" onclick="this.value =''"/><br/></td>
+                                <td>Precio: <input type="text" value="" ng-model="precio" onclick="this.value = ''"/><br/>
+                                    Extras: <input type="text" value="" ng-model="extras" onclick="this.value = ''"/><br/></td>
+                            </tr>
+                            <td align="right"><button ng-model="button" ng-click="altaCoche()" >Grabar</button></td>
+                        </table>
+                    </div>
+                    <script>
+
+                    </script>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <table class="modelos" align="center">
+                            <div class="col-xs-6">
+                                <tr>
+                                    <td>Posicion</td>
+                                    <td ng-click="orderByMe('modelo')">Modelo</td>
+                                    <td ng-click="orderByMe('marca')">Marca</td>
+                                    <td ng-click="orderByMe('precio')">Precio</td>
+                                    <td ng-click="orderByMe('extras')">Extras</td>
+                                </tr>
+                                <tr ng-repeat="coche in concesionarios[selConcesionario].pedidos | orderBy:myOrderBy">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{coche.modelo}}</td>
+                                    <td>{{coche.marca}}</td>
+                                    <td>{{coche.precio}}</td>
+                                    <td>
+                                        <li ng-repeat="extras in coche.extras">
+                                            {{extras}}</br>
+                                        </li>
+                                    </td>
+                                </tr>
+                            </div>
+                            <div class="col-xs-6" align="center">
+                                <!-- <td><button id="check_02" type="button" class="btn-primary">Grabar</button></td> -->
+                            </div>
+                        </table>
+                    </div>
+                    <div class="col-xs-6" align="right">
+
                     </div>
                 </div>
-
-            </div>
-            <div class="panel-body">
-
             </div>
         </div>
     </body>

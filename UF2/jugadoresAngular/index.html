@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jugadores</title>
+        <script src="jquery-3.1.1.js" type="text/javascript" ></script>
+        <script src="bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="estiloJugador.css">
+        <script src="jugadorController.js" type="text/javascript"></script>
+        <script src="jugadorService.js" type="text/javascript"></script>
+    </head>
+    <body ng-app="appEquipos">
+
+        <div ng-controller="controllerJugador">
+            <div align="center" cellpadding="5" cellspacing="1">
+                <table border="1" cellpadding="15" cellspacing="1" width="70%" class="team">
+                    <tr align="center">
+                        <td><h2 class="panel-tittle" style="align-content: center">Ficha Jugadores</h2></td>
+                    </tr>
+                    <td align="justified">
+                        Equips : <input type="text" value="" ng-model="team" onclick="this.value =''" style="width: 15%" />
+                        Victories : <input type="text" value="" ng-model="winer" onclick="this.value =''" style="width: 5%" />
+                        Derrotes : <input type="text" value="" ng-model="defeat" onclick="this.value =''" style="width: 5%"/>
+                        Tipus de Joc : <input type="text" value="" ng-model="option" onclick="this.value =''" style="width: 15%"/>
+                        <br><br>
+                        <button ng-model="button" ng-click="altaEquip()" style="align: left" id="boton_01">Crear Equipo</button><br><br>
+                        Jugador : <input type="text" value="" ng-model="nombre" onclick="this.value =''" style="width: 15%"/>
+                        Punts : <input type="text" value="" ng-model="puntos" onclick="this.value =''" style="width: 5%"/><br>
+                        Nickname : <input type="text" value="" ng-model="nick" onclick="this.value =''" style="width: 15%"/>
+                        Funció Principal : <input type="text" value="" ng-model="fprincipal" onclick="this.value =''" style="width: 15%"/>
+                        <button ng-model="button" ng-click="altaJugador()" id="boton_02">Afegeix/Modifica Jugador</button>
+                    </td><br>
+
+                </table>
+            </div>
+            <br>
+            <div align="center" cellpadding="5" cellspacing="1">
+                <table border="1" cellpadding="15" cellspacing="1" width="70%" class="team_01">
+                    <tr id="tabla_02">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div align="center" cellpadding="5" cellspacing="1">
+                <table border="1" cellpadding="15" cellspacing="1" width="70%" class="team_01">
+                    <tr id="tabla_03">
+                        <td></td>
+                        <td style="text-align: center">Punts</td>
+                        <td style="text-align: center">Nickname</td>
+                        <td style="text-align: center">Nom</td>
+                        <td style="text-align: center">Funció Principal</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

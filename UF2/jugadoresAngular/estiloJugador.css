@@ -1,0 +1,25 @@
+.team
+{
+    background-color: #2aabd2;
+}
+
+.panel-title
+{
+    padding-top: 30px;
+}
+
+#boton_01 {
+    font-size: 12px;
+    color: black;
+}
+
+#boton_02 {
+    font-size: 12px;
+    color: black;
+    width: 120px;
+    height: 40px;
+}
+
+#tabla_03 {
+    align: center;
+}

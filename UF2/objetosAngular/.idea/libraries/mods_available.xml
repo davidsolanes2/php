@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mods-available">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///etc/php/7.0/mods-available" />
+    </SOURCES>
+  </library>
+</component>

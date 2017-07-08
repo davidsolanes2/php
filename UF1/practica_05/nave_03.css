@@ -4,18 +4,20 @@ body
     width: 1250px;
 }
 
-#subject
+#space
 {
     background-image: url("Imagenes/Fondo_Galaxia.jpg");
     height: 400px;
     width: 1250px;
+    padding-right: 50px;
     align-self: inherit;
 }
 
-#space
+
+#subject
 {
     height: 385px;
-    width: 1240px;
+    width: 1150px;
 }
 
 #escudo

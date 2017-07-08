@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica_12</title>
+        <script src="library/jquery-3.1.1.js"></script>
+        <script src="library/bootstrap.min.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
+        <link href="practica12.css" rel="stylesheet" type="text/css" />
+        <script src="controller12.js" type="text/javascript" ></script>
+        <script src="service12.js" type="text/javascript" ></script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="MyCtrl" name="userForm">
+            <div class="container" style="padding-top: 30px;">
+                <form ng-submit="altaPokemon(pokemon)" name="ficha">
+                <table class="tabla" width="600px" height="100%" cellpadding="10" border="1" cellspacing="2">
+                    <thead>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <h5>ALTA POKEMON</h5>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <th>Apodo</th>
+                            <th>Nombre</th>
+                            <th>Evolucion</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                            <tr>
+                                <td>
+                                    <label class="item-input">
+                                        <input type="text" name="apodo" ng-model="pokemon.apodo" size="15px">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="item-input">
+                                        <input type="text" name="nombre" ng-model="pokemon.nombre" size="15px">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="item-input">
+                                        <input type="text" name="evolucion" ng-model="pokemon.evolucion" size="15px">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="item-input">
+                                        <input type="text" name="tipo" ng-model="pokemon.tipo" size="15px">
+                                    </label>
+                                </td>
+                            </tr>
+
+
+                        <tr align="center">
+                            <td><strong>Apodo</strong></td>
+                            <td><strong>Nombre</strong></td>
+                            <td><strong>Evolucion</strong></td>
+                            <td><strong>Tipo</strong></td>
+                        </tr>
+
+                        <tr ng-repeat="pokemon in pokemons track by $index">
+                            <td>{{pokemon.apodo}}</td>
+                            <td>{{pokemon.nombre}}</td>
+                            <td>{{pokemon.evolucion}}</td>
+                            <td>{{pokemon.tipo}}</td>
+                            <td><button ng-click="deletePokemon(pokemon.apodo)"/><strong>Delete Pokemon</strong></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    <td colspan="4" align="center" style="padding-top: 15px; padding-bottom: 15px;">
+                        <button type="btn_01" class="btn btn-info btn-lg" ng-click="altaPokemon()">Alta</button>
+                        <button type="button" class="btn btn-info btn-lg" ng-click="editPokemon()">Editar</button>
+                    </td>
+                    </tfoot>
+                </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -7,35 +7,21 @@
  */
 
 session_start();
+$response = '{"users":[';
+if (!isset($_SESSION["users"])) {
+    $user = array();
+    $user[$_POST["userName"]] = 0;
+    $_SESSION["users"] = $user;
+} else {
+    $users = $_SESSION["users"];
+    $users[$_POST["userName"]] = 0;
+    $_SESSION["users"] = $users;
 
-if (!isset($_SESSION["array"])) {
-    $arr[0][0] = $_POST['nombre'];
-    $arr[0][1] = 0;
-    $_SESSION["array"] = $arr;
-}
-
-$respuesta="{";
-
-if ($_POST["puntuacion"] == 0) {
-    $resultado = count($_SESSION["array"]);
-    $_SESSION["array"][$resultado][0] = $_POST['nombre'];
-    $_SESSION["array"][$resultado][1] = 0;
-
-    $respuesta = "{";
-
-    for ($i = 0; $i < count($_SESSION['array']); $i++) {
-        $respuesta .= '"' . $_SESSION['array'][$i][0] . '":"' . $_SESSION['array'][$i][1] . '",';
+    foreach($users as $user=>$puntuacion){
+        $response.='{"name":"'.$user.'", "score":"'.$puntuacion.'"},';
     }
-
-    $respuesta .= '"":""}';
-    echo $respuesta;
+    $response.='{"name":"", "score":""}';
 }
-else {
-    $resultado = $_POST['puntuacion'];
-    $_SESSION["array"][$resultado][1] = $_POST['puntuacion'];
-    echo $resultado;
-}
+$response.=']}';
+echo $response;
 
-if (isset($_POST['lista']) && isset($_SESSION["array"])) {
-
-}
