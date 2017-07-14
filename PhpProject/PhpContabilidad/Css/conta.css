@@ -1,0 +1,37 @@
+#fondo
+{
+    background: url("../Image/finanzas_01.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#fondo1
+{
+    background-color: #d58512;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#titulo
+{
+    color: #f2f1d4;
+    text-align: center;
+}
+
+#login
+{
+    position: relative;
+    margin-top: 370px;
+}
+
+#pie
+{
+    background-color: #1b6d85;
+    position: relative;
+
+}
+

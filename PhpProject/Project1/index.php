@@ -8,7 +8,7 @@
 
     require_once('./MongodbDatabase.php');
 
-    $db = new MongodbDatabase;
+    $db = new DatabaseContabilidad;
 
     //print_r($db->insertNewItem([
     //    'videoTitle' => 'Interestelar',
