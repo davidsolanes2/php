@@ -25,41 +25,26 @@ $db = new DatabaseContabilidad;
     <?php
         if (isset($_POST['nombre'])) {
             if (!empty($_POST['nombre'])) {
-                /*
-                $insertable = $db->insertNewUser([
+
+                /*$insertable = $db->insertNewUser([
                         'nombre' => $_POST['nombre'],
                         'password' => $_POST['password']
-                ]);
-                */
+                ]);*/
 
-                $val1 = 0;
-                $val2 = 0;
-                foreach ($db->findUser() as $aux1 ) {
-                    $_POST['nom'] = $aux1->nombre;
-                    echo $nom;
-                    if (strcmp($nombre,$nom)==0) {
-                        $val1 = 1;
-                        foreach ($db->findUser() as $aux2 ) {
-                            $_POST['pass'] = $aux2->password;
-                            if (strcmp($password, $pass)==0) {
-                                $val2 = 1;
-                            }
-                        }
+                $nom = $_POST['nombre'];
+                $pass = $_POST['password'];
 
+                foreach ($db->findUser() as $item)
+                {
+                    if((!strcmp($item->nombre, $nom)) && (!strcmp($item->password, $pass)) ) {
+                        header( 'Location: ../PhpContabilidad/Vistas/Principal.php');
+                        exit;
                     }
                 }
 
-                if ($val1 === $val2)
-                {
-                    header( 'Location: ../PhpContabilidad/Vistas/Principal.php');
-                    exit;
-                }
             }
 
         }
-
-
-
 
     ?>
         <div class="container">
