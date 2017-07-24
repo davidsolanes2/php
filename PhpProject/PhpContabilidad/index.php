@@ -65,11 +65,6 @@ $db = new DatabaseContabilidad;
                             </div>
                         </form>
                     </div>
-
-                    <?php
-
-                    ?>
-
                 </div>
                 <div class="panel-footer" id="pie">
                     <h5>Building by:</h5>

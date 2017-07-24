@@ -4312,7 +4312,7 @@ jQuery.fn.extend( {
 			if ( elem && value === undefined ) {
 
 				// Attempt to get data from the cache
-				// The key will always be camelCased in Data
+				// The key will always be camelCased in Controller
 				data = dataUser.get( elem, key );
 				if ( data !== undefined ) {
 					return data;
@@ -5879,13 +5879,13 @@ jQuery.extend( {
 					}
 
 					// Support: Chrome <=35 - 45+
-					// Assign undefined instead of using delete, see Data#remove
+					// Assign undefined instead of using delete, see Controller#remove
 					elem[ dataPriv.expando ] = undefined;
 				}
 				if ( elem[ dataUser.expando ] ) {
 
 					// Support: Chrome <=35 - 45+
-					// Assign undefined instead of using delete, see Data#remove
+					// Assign undefined instead of using delete, see Controller#remove
 					elem[ dataUser.expando ] = undefined;
 				}
 			}
@@ -8787,7 +8787,7 @@ jQuery.extend( {
 			json: "responseJSON"
 		},
 
-		// Data converters
+		// Controller converters
 		// Keys separate source (or catchall "*") and destination types with a single space
 		converters: {
 

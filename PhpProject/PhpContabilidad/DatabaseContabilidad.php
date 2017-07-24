@@ -8,6 +8,7 @@
 
     require_once ('../vendor/autoload.php');
 
+
     class DatabaseContabilidad {
 
         function __construct()
@@ -33,4 +34,4 @@
             return $this->db->find();
         }
 
-}
+    }

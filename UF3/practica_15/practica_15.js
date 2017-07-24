@@ -45,7 +45,7 @@ function addNewUL() {
  <button onclick=”HW()”>Altura de la Web</button>
  <button onclick=”WW()”>Ancho de la Web</button>
  <button onclick=”URL()”>URL de la Web</button>
- <button onclick=”Domain()”>Dominio de la pagina</button>
+ <button onclick=”Domain()”>Domain de la pagina</button>
 
 
  <p id=”maximo”></p>

@@ -27,8 +27,30 @@
             <div class="panel-default">
                 <div class="panel-header">
                     <h1 id="titulo">Gestion Financiera</h1>
+                    <hr>
                 </div>
-                <div class="panel-body"></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <form action="configuracion.php"  method="POST">
+                                <input type="image" src="../Image/libro_08.png" width="100px" height="100px">
+                                <h6>Usuarios</h6>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
